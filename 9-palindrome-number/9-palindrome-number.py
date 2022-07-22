@@ -1,13 +1,9 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        rev1 = x
-        rev = 0
-        while x > 0:
-            dig = x % 10 
-            rev = rev * 10 + dig
-            x = x // 10
-        print(rev)
-        if rev1 == rev:
-            return True
-        else:
+        if x < 0 or(x>0 and x%10 == 0):
             return False
+        r = 0 
+        while x > r:
+            r = r * 10 + x % 10
+            x = x // 10 
+        return x == r or x == r // 10 
